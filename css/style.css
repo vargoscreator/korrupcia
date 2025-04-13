@@ -167,6 +167,26 @@ main.main{
 .breadcrumbs li a:hover{
     color: #FF4713;
 }
+
+.pages-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 104px;
+    flex-wrap: wrap;
+}
+.pages-content a{
+    color:#6F7271;
+    font-size: 25px;
+    line-height: normal;
+    transition: all .2s ease;
+}
+.pages-content a.active,
+.pages-content a:hover{
+    color: #FF4713;
+}
+
 @media (max-width: 1340px) {
     main.main{
         padding-top: 116px;
@@ -189,6 +209,9 @@ main.main{
     }
     .descr{
         font-size: 20px;
+    }
+    .pages-content{
+        margin-top: 40px;
     }
 }
 @media (max-width: 767px) {
@@ -215,6 +238,9 @@ main.main{
     input{
         padding: 10px 16px;
         height: 45px;
+    }
+    .pages-content a{
+        font-size: 20px;
     }
 }
 @media (max-width: 370px) {
@@ -3486,24 +3512,6 @@ a.contacts__link:hover{
 .cases__item:hover .cases__item-image::after{
     opacity: 1;
 }
-.cases__pages{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 104px;
-    flex-wrap: wrap;
-}
-.cases__pages a{
-    color:#6F7271;
-    font-size: 25px;
-    line-height: normal;
-    transition: all .2s ease;
-}
-.cases__pages a.active,
-.cases__pages a:hover{
-    color: #FF4713;
-}
 @media (max-width: 1279px) {
     .cases__block{
         grid-template-columns: 1fr 1fr;
@@ -3518,8 +3526,8 @@ a.contacts__link:hover{
         margin-top: 40px;
         gap: 30px;
     }
-    .cases__pages{
-        margin-top: 40px;
+    .cases__item-title{
+        font-size: 24px;
     }
 }
 @media (max-width: 767px) {
@@ -3528,7 +3536,7 @@ a.contacts__link:hover{
     }
 }
 @media (max-width: 479px) {
-    .cases__pages a{
+    .cases__item-title{
         font-size: 20px;
     }
 }
@@ -3672,7 +3680,7 @@ a.contacts__link:hover{
     object-position: center;
 }
 .pageContent__inner{
-    height: 900px;
+    min-height: 900px;
     position: relative;
 }
 .pageContent__title{
@@ -3687,8 +3695,218 @@ a.contacts__link:hover{
     text-align: center;
 }
 .pageContent-small .pageContent__inner{
-    height: 760px;
+    min-height: 760px;
 }
 .pageContent-start .pageContent__name{
     text-align: left;
+}
+@media (max-width: 1279px) {
+    .pageContent__inner,
+    .pageContent-small .pageContent__inner {
+        min-height: 600px;
+    }
+}
+@media (max-width: 767px) {
+    .pageContent__inner,
+    .pageContent-small .pageContent__inner {
+        min-height: 520px;
+    }
+}
+/* blog */
+.blog{
+    padding: 104px 0;
+}
+.blog__block{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 64px 39px;
+}
+.blog__item{
+    display: flex;
+    flex-direction: column;
+}
+.blog__item-content{
+    margin-top: 32px;
+}
+.blog__item-image{
+    display: flex;
+    align-items: center;
+    height: 361px;
+    clip-path: polygon(80% 0, 100% 20%, 100% 100%, 0 100%, 0 0);
+}
+.blog__item-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: all .2s ease;
+}
+.blog__item-image:hover img{
+    transform: scale(1.1);
+}
+.blog__item-title h3{
+    overflow: hidden;
+    color: #FFF;
+    text-overflow: ellipsis;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    display: -webkit-box;
+    max-width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    transition: all .2s ease;
+}
+.blog__item-title:hover h3{
+    color: #FF4713;
+}
+.blog__item-date{
+    margin-top: 12px;
+    color: #FFF;
+    line-height: normal;
+}
+.blog__item-descr{
+    margin-top: 32px;
+    color: #FFF;
+    line-height: normal;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    align-self: stretch;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.blog__item-more{
+    margin-top: 32px;   
+    display: flex;
+    align-items: center;
+    max-width: max-content;
+    color: #FFF;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    transition: all .2s ease;
+    gap: 22px;
+}
+.blog__item-more:hover{
+    color: #FF4713;
+}
+@media (max-width: 1279px) {
+    .blog__block{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width: 999px) {
+    .blog {
+        padding: 80px 0;
+    }
+    .blog__item-image{
+        height: 257px;
+    }
+    .blog__item-title h3{
+        font-size: 24px;
+    }
+    .blog__item-content,
+    .blog__item-descr{
+        margin-top: 20px;
+    }
+}
+@media (max-width: 767px) {
+    .blog{
+        padding: 60px 0 40px;
+    }
+    .blog__block{
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .blog__item-more svg{
+        height: auto;
+        width: 15px;
+    }
+}
+@media (max-width: 479px) {
+    .blog__item-title h3 {
+        font-size: 20px;
+    }
+    .blog__item-more,   
+    .blog__item-date,
+    .blog__item-descr{
+        font-size: 16px;
+    }
+    .blog__item-more svg{
+        width: 10px;
+    }
+}
+/* merch */
+.merch{
+    padding: 102px 0 0;
+    overflow: hidden;
+}
+.merch__slider-content{
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    width: 100%;
+    margin-top: 32px;
+}
+.merch__slider{
+    max-width: 1047px;
+    width: 100%;
+}
+.merch__slider .swiper-wrapper{
+    align-items: stretch;
+}
+.merch__slide{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+.merch__slide-image{
+    display: flex;
+    align-items: center;
+}
+.merch__slide-image img{
+    width: max-content;
+    max-width: 100%;
+    max-height: 100%;
+}
+.merch__slider-content > button{
+    position: relative;
+    z-index: 10;
+}
+.merch__slider-content > button:last-of-type{
+    margin-left: auto;
+}
+@media (max-width: 1279px) {
+    .merch__slider{
+        max-width: 757px;
+    }
+}
+@media (max-width: 999px) {
+    .merch{
+        padding: 80px 0 0;
+    }
+    .merch__slider-content{
+        gap: 0;
+    }
+    .merch__slider{
+        max-width: calc(100% - 58px);
+    }
+}
+@media (max-width: 767px) {
+    .merch {
+        padding: 60px 0 0;
+    }
+    .merch__slider-content{
+        margin-top: 20px;
+    }
+    .merch__slider-content > button svg{
+        width: 20px;
+        height: auto;
+    }
 }
