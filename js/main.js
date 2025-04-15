@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
         loop: false,
         spaceBetween: 32,
         slidesPerView: 1,
+        initialSlide: 1,
         pagination: {
             el: ".reviews__slider-pagination",
         },
