@@ -1460,7 +1460,10 @@ ul.messageBlock__list li::before,
     }
     .infoBlock-small .infoBlock__image,
     .infoBlock__image{
-        width: 100%;
+        width: auto;
+        height: auto;
+        margin: 0 -16px;
+        max-width: none;
     }
 }
 /* aboutBlock */
