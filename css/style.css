@@ -2638,7 +2638,7 @@ ol.messageBlock__list li{
 .selectService__subtitle:not(:first-child){
     margin-top: 32px;
 }
-.selectService__about{
+.about-block{
     padding: 64px 100px 64px 0;
     margin: 64px -100px 64px 0;
     background-color: #6F7271;
@@ -2648,7 +2648,7 @@ ol.messageBlock__list li{
     position: relative;
     z-index: 1;
 }
-.selectService__about::before{
+.about-block::before{
     position: absolute;
     z-index: -1;
     content: '';
@@ -2658,14 +2658,14 @@ ol.messageBlock__list li{
     left: -50vw;
     background-color: #6F7271;
 }
-.selectService__about-title{
+.about-block-title{
     color: #000;
 }
-.selectService__table{
+.table-block{
     margin-top: 64px;
     width: 100%;
 }
-.selectService__table-title{
+.table-block-title{
     padding: 10px;
     background-color: #FF4713;
     border: 1px solid #464749;
@@ -2675,10 +2675,10 @@ ol.messageBlock__list li{
     font-weight: 700;
     line-height: normal;
 }
-.selectService__table-name{
+.table-block-name{
     border-right: 1px solid #464749;
 }
-.selectService__table-block{
+.table-block-block{
     display: grid;
     grid-template-columns: 1.3fr 1fr;
     border-bottom: 1px solid #464749;
@@ -2686,10 +2686,10 @@ ol.messageBlock__list li{
     border-right: 1px solid #464749;
     background-color: #6F7271;
 }
-.selectService__table-block p{
+.table-block-block p{
     width: 100%;
 }
-.selectService__table-name{
+.table-block-name{
     color: #000;
     font-size: 28px;
     font-weight: 700;
@@ -2699,7 +2699,7 @@ ol.messageBlock__list li{
     align-items: center;
     padding-left: 180px;
 } 
-.selectService__table-descr{
+.table-block-descr{
     padding: 10px;
     text-align: center;
     display: flex;
@@ -2723,7 +2723,7 @@ ol.messageBlock__list li{
     .selectService__image{
         min-height: 700px;
     }
-    .selectService__about{
+    .about-block{
         margin-right: 0;
     }
     .selectService-autoservice .selectService__content-inner,
@@ -2754,7 +2754,7 @@ ol.messageBlock__list li{
     .selectService__image{
         min-height: 600px;
     }
-    .selectService__table-name{
+    .table-block-name{
         padding-left: 60px;
     }
     .selectService-autoservice .selectService__content-inner{
@@ -2781,21 +2781,21 @@ ol.messageBlock__list li{
     .selectService__descr{
         margin-top: 20px;
     }
-    .selectService__about{
+    .about-block{
         margin-top: 40px;
         margin-bottom: 40px;
         padding-top: 40px;
         padding-bottom: 40px;
         gap: 20px;
     }
-    .selectService__table-title,
-    .selectService__table-name{
+    .table-block-title,
+    .table-block-name{
         font-size: 24px;
     }
-    .selectService__table{
+    .table-block{
         margin-top: 40px;
     }
-    .selectService__table-name{
+    .table-block-name{
         padding-left: 10px;
     }
     .selectService-bg-image {
@@ -2813,7 +2813,7 @@ ol.messageBlock__list li{
     .selectService__image {
         min-height: 400px;
     }
-    .selectService__table-name{
+    .table-block-name{
         font-size: 18px;
     }
     .selectService-bg-image{
@@ -2935,8 +2935,8 @@ ol.messageBlock__list li{
 .list-title:not(:last-of-type){
     margin-bottom: 32px;
 }
-.packages__content .selectService__table-name,
-.packages__content .selectService__table-descr{
+.packages__content .table-block-name,
+.packages__content .table-block-descr{
     color: #000;
 }
 
@@ -3796,6 +3796,7 @@ a.contacts__link:hover{
     -webkit-line-clamp: 2;
     transition: all .2s ease;
 }
+.blog__item-descr:hover p,
 .blog__item-title:hover h3{
     color: #FF4713;
 }
@@ -3806,15 +3807,18 @@ a.contacts__link:hover{
 }
 .blog__item-descr{
     margin-top: 32px;
+    display: inline-block;
+}
+.blog__item-descr p{
     color: #FFF;
     line-height: normal;
-
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     align-self: stretch;
     text-overflow: ellipsis;
     overflow: hidden;
+    transition: all .2s ease;
 }
 .blog__item-more{
     margin-top: 32px;   
@@ -3871,7 +3875,7 @@ a.contacts__link:hover{
     }
     .blog__item-more,   
     .blog__item-date,
-    .blog__item-descr{
+    .blog__item-descr p{
         font-size: 16px;
     }
     .blog__item-more svg{
