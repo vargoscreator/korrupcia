@@ -428,10 +428,18 @@ main.main{
 .header__menu-line{
     width: 3px;
     min-width: 3px;
-    background-color: #464749;
-    height: 600px;
+    height: auto;
     display: flex;
-    margin-top: -73px;
+    position: relative;
+}
+.header__menu-line::after{
+    content: '';
+    position: absolute;
+    top: -73px;
+    bottom: -73px;
+    background-color: #464749;
+    width: 100%;
+    height: auto;
 }
 .header__menu-social{
     display: flex;
@@ -596,7 +604,16 @@ main.main{
         width: 80%;
     }
 }
-@media (max-width: 1340px) {
+@media (max-width: 1440px) {
+    .header__menu-content {
+        margin: 5% auto 3%;
+    }
+    .header__menu-line::after {
+        top: -33px;
+        bottom: -33px;
+    }
+}
+@media (max-width: 1370px) {
     .header__end{
         gap: 15px;
     }
