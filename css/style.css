@@ -1648,8 +1648,13 @@ ul.messageBlock__list li::before,
 }
 .reviews__slider{
     width: 100%;
-    max-width: 552px;
+    max-width: 100%;
     margin: 64px auto 0;
+    user-select: none;
+    cursor: grab;
+}
+.reviews__slider:active{
+    cursor: grabbing;
 }
 .reviews__slider .swiper-wrapper{
     align-items: stretch;
@@ -1723,6 +1728,11 @@ ul.messageBlock__list li::before,
 }
 .reviews__slide.swiper-slide-active{
     border-bottom: 4px solid #FF4713;
+}
+@media (max-width: 1719px) {
+    .reviews__slider{
+        max-width: 1136px;
+    }
 }
 @media (max-width: 1279px) {
     .reviews__slide{
@@ -3911,16 +3921,13 @@ a.contacts__link:hover{
     width: 100%;
     margin-top: 32px;
 }
-.merch__slider{
-    max-width: 1047px;
-    width: 100%;
-}
 .merch__slider .swiper-wrapper{
     align-items: stretch;
 }
 .merch__slide{
     display: flex;
     align-items: center;
+    justify-content: center;
     width: 100%;
     height: auto;
 }
@@ -3937,12 +3944,37 @@ a.contacts__link:hover{
     position: relative;
     z-index: 10;
 }
-.merch__slider-content > button:last-of-type{
-    margin-left: auto;
+.merch__slider{
+    position: relative;
+    user-select: none;
+    cursor: grab;
+    width: calc(100% - 102px);
+}
+.merch__slider:active{
+    cursor: grabbing;
+}
+.merch__slider::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    width: 480px;
+    height: 549px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='486' height='555' viewBox='0 0 486 555' fill='none'%3E%3Cpath d='M3 79V3H90M483 486V552H407' stroke='%23FF4713' stroke-width='6'/%3E%3C/svg%3E");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
 }
 @media (max-width: 1279px) {
     .merch__slider{
         max-width: 757px;
+        margin: 0 auto;
+    }
+    .merch__slider::after {
+        width: 440px;
     }
 }
 @media (max-width: 999px) {
@@ -3955,6 +3987,10 @@ a.contacts__link:hover{
     .merch__slider{
         max-width: calc(100% - 58px);
     }
+    .merch__slider::after {
+        width: 370px;
+        height: 370px;
+    }
 }
 @media (max-width: 767px) {
     .merch {
@@ -3966,5 +4002,15 @@ a.contacts__link:hover{
     .merch__slider-content > button svg{
         width: 20px;
         height: auto;
+    }
+    .merch__slider::after {
+        width: 270px;
+        height: 270px;
+    }
+}
+@media (max-width: 479px) {
+    .merch__slider::after {
+        width: 180px;
+        height: 180px;
     }
 }

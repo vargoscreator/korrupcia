@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
         loop: false,
         spaceBetween: 0,
         slidesPerView: 1,
+        speed: 700,
         navigation: {
             nextEl: ".hero__slide-next",
             prevEl: ".hero__slide-prev",
@@ -11,14 +12,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     let reviewsSwiper = new Swiper(".reviews__slider", {
-        loop: false,
+        loop: true,
         spaceBetween: 32,
         slidesPerView: 1,
         initialSlide: 1,
+        speed: 700,
+        centeredSlides: true, 
         pagination: {
             el: ".reviews__slider-pagination",
         },
+        breakpoints: {
+            768: {
+                slidesPerView: 1,
+            },
+            1000: {
+                slidesPerView: 2,
+            },
+            1720: {
+                slidesPerView: 3,
+            }
+        }
     });
+    
     
 
 });
