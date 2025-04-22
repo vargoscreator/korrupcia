@@ -16,19 +16,22 @@ document.addEventListener("DOMContentLoaded", function () {
         spaceBetween: 32,
         slidesPerView: 1,
         speed: 700,
-        centeredSlides: true, 
+        centeredSlides: false, 
         pagination: {
             el: ".reviews__slider-pagination",
         },
         breakpoints: {
             768: {
                 slidesPerView: 1.5,
+                centeredSlides: true, 
             },
             1000: {
                 slidesPerView: 2,
+                centeredSlides: true, 
             },
             1720: {
                 slidesPerView: 3,
+                centeredSlides: true, 
             }
         }
     });
