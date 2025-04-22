@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", function () {
         loop: true,
         spaceBetween: 32,
         slidesPerView: 1,
-        initialSlide: 1,
         speed: 700,
         centeredSlides: true, 
         pagination: {
@@ -23,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         breakpoints: {
             768: {
-                slidesPerView: 1,
+                slidesPerView: 1.5,
             },
             1000: {
                 slidesPerView: 2,
