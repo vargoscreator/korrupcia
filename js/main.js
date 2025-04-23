@@ -20,6 +20,13 @@ document.addEventListener("DOMContentLoaded", function () {
         pagination: {
             el: ".reviews__slider-pagination",
         },
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        navigation: {
+            nextEl: ".reviews__slider-next",
+        },
         breakpoints: {
             768: {
                 slidesPerView: 1.5,
